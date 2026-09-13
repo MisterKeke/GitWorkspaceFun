@@ -5,8 +5,8 @@ import (
 	"os"
 	"os/exec"
 
-	"gitworkspacefun/internal/config"
-	"gitworkspacefun/internal/gitcli"
+	"github.com/MisterKeke/GitWorkspaceFun/internal/config"
+	"github.com/MisterKeke/GitWorkspaceFun/internal/gitcli"
 
 	"github.com/spf13/cobra"
 )

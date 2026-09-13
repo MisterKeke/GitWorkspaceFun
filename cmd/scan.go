@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"gitworkspacefun/internal/config"
-	"gitworkspacefun/internal/repository"
+	"github.com/MisterKeke/GitWorkspaceFun/internal/config"
+	"github.com/MisterKeke/GitWorkspaceFun/internal/repository"
 
 	"github.com/spf13/cobra"
 )

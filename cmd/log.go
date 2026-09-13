@@ -6,7 +6,7 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"gitworkspacefun/internal/gitcli"
+	"github.com/MisterKeke/GitWorkspaceFun/internal/gitcli"
 
 	"github.com/spf13/cobra"
 )

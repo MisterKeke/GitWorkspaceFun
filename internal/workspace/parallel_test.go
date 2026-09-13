@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"gitworkspacefun/internal/repository"
+	"github.com/MisterKeke/GitWorkspaceFun/internal/repository"
 )
 
 func TestForEachProcessesAllRepositories(t *testing.T) {

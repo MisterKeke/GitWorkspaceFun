@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"gitworkspacefun/internal/repository"
+	"github.com/MisterKeke/GitWorkspaceFun/internal/repository"
 )
 
 func TestSaveLoadRoundTrip(t *testing.T) {

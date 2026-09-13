@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"gitworkspacefun/internal/repository"
+	"github.com/MisterKeke/GitWorkspaceFun/internal/repository"
 )
 
 // Ensure creates the default configuration when it does not exist.

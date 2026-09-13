@@ -3,7 +3,7 @@ package workspace
 import (
 	"sync"
 
-	"gitworkspacefun/internal/repository"
+	"github.com/MisterKeke/GitWorkspaceFun/internal/repository"
 )
 
 // Result is the outcome of processing one repository.

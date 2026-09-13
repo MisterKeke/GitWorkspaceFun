@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"gitworkspacefun/internal/config"
-	"gitworkspacefun/internal/gitcli"
-	"gitworkspacefun/internal/repository"
+	"github.com/MisterKeke/GitWorkspaceFun/internal/config"
+	"github.com/MisterKeke/GitWorkspaceFun/internal/gitcli"
+	"github.com/MisterKeke/GitWorkspaceFun/internal/repository"
 
 	"github.com/spf13/cobra"
 )

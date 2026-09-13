@@ -1,6 +1,6 @@
 package main
 
-import cmd "gitworkspacefun/cmd"
+import cmd "github.com/MisterKeke/GitWorkspaceFun/cmd"
 
 func main() {
 	cmd.Execute()

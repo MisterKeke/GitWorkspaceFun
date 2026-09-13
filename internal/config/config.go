@@ -4,7 +4,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"gitworkspacefun/internal/repository"
+	"github.com/MisterKeke/GitWorkspaceFun/internal/repository"
 )
 
 const directoryName = ".gw"

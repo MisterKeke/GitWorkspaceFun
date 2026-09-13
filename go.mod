@@ -1,4 +1,4 @@
-module gitworkspacefun
+module github.com/MisterKeke/GitWorkspaceFun
 
 go 1.26.4
 
