@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"path/filepath"
 
 	"github.com/MisterKeke/GitWorkspaceFun/internal/repository"
 )
@@ -14,11 +15,13 @@ func Ensure() error {
 	if err != nil {
 		return err
 	}
+	return EnsureAt(path)
+}
 
-	dir, err := Dir()
-	if err != nil {
-		return err
-	}
+// EnsureAt creates the default configuration at an explicit path.
+func EnsureAt(path string) error {
+
+	dir := filepath.Dir(path)
 
 	if _, err := os.Stat(path); err == nil {
 		return nil
@@ -56,12 +59,16 @@ func Ensure() error {
 }
 
 func Load() (*Config, error) {
-	if err := Ensure(); err != nil {
-		return nil, err
-	}
-
 	path, err := Path()
 	if err != nil {
+		return nil, err
+	}
+	return LoadAt(path)
+}
+
+// LoadAt loads a configuration from an explicit path.
+func LoadAt(path string) (*Config, error) {
+	if err := EnsureAt(path); err != nil {
 		return nil, err
 	}
 

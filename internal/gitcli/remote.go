@@ -38,6 +38,9 @@ func RemoteWebURL(remote string) string {
 		}
 	}
 	if parsed, err := url.Parse(remote); err == nil && parsed.Host != "" {
+		if parsed.Scheme != "http" && parsed.Scheme != "https" && parsed.Scheme != "ssh" {
+			return ""
+		}
 		parsed.Scheme = "https"
 		parsed.User = nil
 		parsed.Path = strings.TrimSuffix(parsed.Path, ".git")
@@ -45,5 +48,5 @@ func RemoteWebURL(remote string) string {
 		parsed.Fragment = ""
 		return parsed.String()
 	}
-	return strings.TrimSuffix(remote, ".git")
+	return ""
 }

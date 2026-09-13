@@ -1,7 +1,15 @@
 package main
 
-import cmd "github.com/MisterKeke/GitWorkspaceFun/cmd"
+import (
+	"fmt"
+	"os"
+
+	"github.com/MisterKeke/GitWorkspaceFun/cmd"
+)
 
 func main() {
-	cmd.Execute()
+	if err := cmd.Execute(); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
 }

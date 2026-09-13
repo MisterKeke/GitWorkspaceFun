@@ -31,12 +31,16 @@ func marshal(cfg *Config) ([]byte, error) {
 }
 
 func Save(cfg *Config) error {
-	data, err := marshal(cfg)
+	path, err := Path()
 	if err != nil {
 		return err
 	}
+	return SaveAt(path, cfg)
+}
 
-	path, err := Path()
+// SaveAt saves a configuration to an explicit path.
+func SaveAt(path string, cfg *Config) error {
+	data, err := marshal(cfg)
 	if err != nil {
 		return err
 	}

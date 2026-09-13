@@ -6,17 +6,9 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"os"
 	"os/exec"
 	"strings"
 )
-
-var verbose bool
-
-// SetVerbose enables diagnostic command logging for the current process.
-func SetVerbose(enabled bool) {
-	verbose = enabled
-}
 
 // Run executes Git with repoPath as its working repository.
 func Run(ctx context.Context, repoPath string, args ...string) (string, error) {
@@ -27,10 +19,6 @@ func Run(ctx context.Context, repoPath string, args ...string) (string, error) {
 	gitArgs := make([]string, 0, len(args)+2)
 	gitArgs = append(gitArgs, "-C", repoPath)
 	gitArgs = append(gitArgs, args...)
-	if verbose {
-		fmt.Fprintf(os.Stderr, "DEBUG running:\ngit %s\n", strings.Join(gitArgs, " "))
-	}
-
 	command := exec.CommandContext(ctx, "git", gitArgs...)
 	var stderr bytes.Buffer
 	command.Stderr = &stderr
